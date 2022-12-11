@@ -6,10 +6,11 @@ h1 {
   padding: 0;
 }
 html,
-body,
-.app {
-  margin: 0;
+body {
   padding: 16px 32px;
+}
+.app {
+  margin: 0 auto;
   position: relative;
   transition: all 5s ease-in-out;
 }
@@ -31,7 +32,7 @@ body,
   padding: 16px 32px;
   margin: auto;
   border-radius: 4px;
-  background: white;
+  background: #f3f3f3;
 }
 .d-flex {
   display: flex;

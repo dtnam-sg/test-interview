@@ -10,7 +10,7 @@ const Popup = (props) => {
         <p>Capital: {country?.capital?.toLocaleString()}</p>
         <p>Region: {country?.region?.toLocaleString()}</p>
         <p>Subregion: {country?.subregion?.toLocaleString()}</p>
-        <p>Total confirm: {data?.TotalConfirmed.toLocaleString()}</p>
+        <p>Total confirmed: {data?.TotalConfirmed.toLocaleString()}</p>
         <p>Total deadths: {data?.TotalDeaths.toLocaleString()}</p>
         <p>Total recovered: {data?.TotalRecovered.toLocaleString()}</p>
         <p>Population: {country?.population?.toLocaleString()}</p>

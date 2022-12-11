@@ -30,7 +30,7 @@ export default function App() {
     if (showPopup) {
       getCountryByCode(data?.CountryCode);
     }
-  }, [showPopup]);
+  }, [showPopup,data?.CountryCode]);
 
   const getCountriesTotalConfirm = () => {
     const newItems = [...items];
@@ -56,10 +56,15 @@ export default function App() {
     }
   };
 
-  const togglePopup = (item) => {
+  const showPopupDetail = (item) => {
     setData(item);
-    setShowPopup(!showPopup);
+    setShowPopup(preState => !preState);
   };
+  
+  const hidePopup = () => {
+    setData({})
+    setShowPopup(false);
+  }
 
   return (
     <div className="App">
@@ -74,13 +79,13 @@ export default function App() {
               <p>
                 {index + 1}. {it?.Country} - {it?.CountryCode} - {it?.Slug}
               </p>
-              <span onClick={() => togglePopup(it)}>Detail</span>
+              <span onClick={() => showPopupDetail(it)}>Detail</span>
             </div>
           ))}
         </>
       )}
-      {showPopup && (
-        <Popup data={data} country={country} closePopup={togglePopup} />
+      {showPopup && data && (
+        <Popup data={data} country={country} closePopup={hidePopup} />
       )}
     </div>
   );
